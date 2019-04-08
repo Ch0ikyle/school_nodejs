@@ -7,11 +7,17 @@ var router = express.Router();
 //   res.render('index', { title: 'Express' });
 // });
 
-router.get('/api', function(req, res, next){
-  res.send({ a : 1 });
+router.get('/', function(req, res, next){
+  res.send({ msg:'hi', a:1});
 });
 
-router.use('/test', require('./test'));
+router.get('/ab', function(req, res, next){
+  res.send({ msg:'ab', a : 1 });
+});
+
+router.get('/abc', function(req, res, next){
+  res.send({ msg:'abc', a : 1 });
+});
 
 router.all('*', function(req,res,next){
   next(createError(404,'API를 찾을 수 없습니다.'));
