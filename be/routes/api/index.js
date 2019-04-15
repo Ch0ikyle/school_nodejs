@@ -12,6 +12,7 @@ router.get('/api', function(req, res, next){
 });
 
 router.use('/test', require('./test'));
+router.use('/user', require('./users'));
 
 router.all('*', function(req,res,next){
   next(createError(404,'API를 찾을 수 없습니다.'));
