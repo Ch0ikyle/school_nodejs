@@ -2,7 +2,24 @@
   <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
       <v-flex xs12 sm6 md4 v-for="u in users">
-        {{u.name}}
+        <v-card>
+          <v-img
+            src="https://cdn.discordapp.com/attachments/551955730882756619/567165139510362112/unknown.png"
+            aspect-ratio="2.75"
+          ></v-img>
+
+          <v-card-title primary-title>
+            <div>
+              <h3 class="headline mb-0">{{u.name}}</h3>
+              <div>{{u.age}}</div>
+            </div>
+          </v-card-title>
+
+          <v-card-actions>
+            <v-btn flat color="orange">Share</v-btn>
+            <v-btn flat color="orange">Explore</v-btn>
+          </v-card-actions> -->
+        </v-card>
       </v-flex>
     </v-layout>
   </v-container>
