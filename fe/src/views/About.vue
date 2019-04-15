@@ -19,7 +19,7 @@ export default {
     }
   },
   mounted(){
-    const a = {a:1, b:2}
+    const a = {a:1, b:2 }
     this.text = JSON.stringify(this.$vuetify.breakpoint)
   }
 }
