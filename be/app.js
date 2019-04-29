@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
 const cors = require('cors');
 
 var app = express();
@@ -35,3 +36,30 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+const User = require('./models/users');
+
+mongoose.connect('mongodb://localhost:27017/school', { useNewUrlParser: true}, (err) => {
+  if (err) return console.error(err);
+  console.log('mongoose connected!');
+
+  User.create({name : '하하'})
+    .then(r => console.log(r))
+    .catch(e => console.error(e))
+
+  // User.find()
+  //   .then(r => console.log(r))
+  //   .catch(e => console.error(e))
+  // User.updateOne({_id : '5cbd1e4efa4cae0b1ed7b30e'}, { $set : { age:27}})
+  //   .then(r => {
+  //     console.log(r);
+  //     console.log('updated');
+  //     return User.find();
+  //   })
+  //   .catch(e => console.error(e));
+
+  // User.deleteOne({ name : '하하'})
+  //   .then(r => console.log(r))
+  //   .catch(e => console.error(e))
+  
+});
